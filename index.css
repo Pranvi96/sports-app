@@ -1,0 +1,92 @@
+.app {
+    border: 1px solid black;
+}
+
+.header {
+    display: flex;
+}
+
+.header > img {
+    height: 200px;
+    object-fit: contain;
+}
+
+.container {
+    display: flex;
+}
+
+.wrapper {
+    border: 1px solid black;
+    width: 50%;
+    margin: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.play-card {
+    border: 1px solid black;
+    width: 300px;
+    height: 180px;
+    margin: 0 10px 10px 10px;
+    background-color: aliceblue;
+    border-radius: 30px;
+    display: flex;
+    overflow: hidden;
+}
+
+.event-type {
+    border-right: 1px solid black;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.select-btn {
+    border: 2px solid green;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.remove-btn {
+    border: 2px solid crimson;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.shimmer-wrapper {
+    width: 50%;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #000;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shimmer-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 300px;
+    height: 180px;
+    background-color: lightgrey;
+    margin: 10px 10px 10px 10px;
+    border-radius: 30px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.search > button {
+    margin-left: 10px;
+}
