@@ -11,7 +11,6 @@ const usePlayCardDetails = () => {
     async function getAllCards() {
         const data = await fetch(FETCH_PLAY_CARDS);
         const json = await data.json();
-        // console.log(json);
         setCards(json);
     }
     return cards

@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import usePlayCardDetails from "../utils/usePlayCardDetails";
 import SportsCard from "./SportsCard";
 import { timeCheck } from "../utils/helper";
+import { NO_EVENT_SELECTED } from "../../constants";
 
 const Body = () => {
   const [selectedCards, setSelectedCards] = useState([]);
@@ -40,14 +41,16 @@ const Body = () => {
   ) : (
     <div className="container">
       <div className="wrapper">
-        <h2>All Events</h2>
+        <h1>All Events</h1>
         <div className="cards">
           {cards.map(card => {
             return (
               <SportsCard
                 card={card}
                 handleSelectCard={handleSelectCard}
-                isSelected={selectedCards.findIndex(({ id }) => id === card.id)>-1}
+                isSelected={
+                  selectedCards.findIndex(({ id }) => id === card.id) > -1
+                }
                 allEvents
               />
             );
@@ -55,18 +58,23 @@ const Body = () => {
         </div>
       </div>
       <div className="wrapper">
-        <h2>Selected events</h2>
+        <h1>Selected events</h1>
         <div className="cards">
-          {!selectedCards.length ? <h3>You have not selected any event yet. Please select some events.</h3>
-          : selectedCards.map(card => {
-            return (
-              <SportsCard
-                card={card}
-                removeCard={removeCard}
-                isSelected={selectedCards.findIndex(({ id }) => id === card.id)>-1}
-              />
-            );
-          })}
+          {!selectedCards.length ? (
+            <h2>{NO_EVENT_SELECTED}</h2>
+          ) : (
+            selectedCards.map(card => {
+              return (
+                <SportsCard
+                  card={card}
+                  removeCard={removeCard}
+                  isSelected={
+                    selectedCards.findIndex(({ id }) => id === card.id) > -1
+                  }
+                />
+              );
+            })
+          )}
         </div>
       </div>
     </div>

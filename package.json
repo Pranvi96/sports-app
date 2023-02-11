@@ -1,7 +1,6 @@
 {
   "name": "sports-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +15,16 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pranvi96/sports-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Pranvi96/sports-app/issues"
+  },
+  "homepage": "https://github.com/Pranvi96/sports-app#readme",
+  "description": ""
 }
