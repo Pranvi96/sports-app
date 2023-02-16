@@ -12,7 +12,6 @@ const Body = () => {
   console.log(cards);
 
   const handleSelectCard = card => {
-    console.log("check-----", timeCheck(card, selectedCards));
     if (selectedCards.length >= 3) {
       alert("You cannot select more than 3 events");
       return;
