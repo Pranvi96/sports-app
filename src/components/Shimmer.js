@@ -1,6 +1,6 @@
 const Shimmer = () => {
   return (
-    <div className="container">
+    <div className="shimmer-container">
       <div className="shimmer-wrapper">
         {Array(10)
           .fill("")

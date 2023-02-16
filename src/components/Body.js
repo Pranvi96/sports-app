@@ -3,20 +3,26 @@ import Shimmer from "./Shimmer";
 import usePlayCardDetails from "../utils/usePlayCardDetails";
 import SportsCard from "./SportsCard";
 import { timeCheck } from "../utils/helper";
-import { NO_EVENT_SELECTED } from "../../constants";
+import {
+  ALL_EVENTS,
+  MAX_EVENTS_SELECTED,
+  MAX_NO_OF_EVENTS_TO_PARTICIPATE,
+  NO_EVENT_SELECTED,
+  SELECTED_EVENTS,
+  TIMED_EVENTS_SELECTED,
+} from "../../constants";
 
 const Body = () => {
   const [selectedCards, setSelectedCards] = useState([]);
 
   const cards = usePlayCardDetails();
-  console.log(cards);
 
   const handleSelectCard = card => {
-    if (selectedCards.length >= 3) {
-      alert("You cannot select more than 3 events");
+    if (selectedCards.length >= MAX_NO_OF_EVENTS_TO_PARTICIPATE) {
+      alert(MAX_EVENTS_SELECTED);
       return;
     } else if (timeCheck(card, selectedCards)) {
-      alert("You cannot participate in more than one event at the same time.");
+      alert(TIMED_EVENTS_SELECTED);
       return;
     } else {
       setSelectedCards(prev => {
@@ -28,7 +34,6 @@ const Body = () => {
   const removeCard = id => {
     const dummyState = [...selectedCards];
     let index = dummyState.findIndex(el => el.id === id);
-    console.log(index);
     if (index !== -1) {
       dummyState.splice(index, 1);
       setSelectedCards(dummyState);
@@ -40,7 +45,7 @@ const Body = () => {
   ) : (
     <div className="container">
       <div className="wrapper">
-        <h1>All Events</h1>
+        <h1>{ALL_EVENTS}</h1>
         <div className="cards">
           {cards.map(card => {
             return (
@@ -57,7 +62,7 @@ const Body = () => {
         </div>
       </div>
       <div className="wrapper">
-        <h1>Selected events</h1>
+        <h1>{SELECTED_EVENTS}</h1>
         <div className="cards">
           {!selectedCards.length ? (
             <h2>{NO_EVENT_SELECTED}</h2>

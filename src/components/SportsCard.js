@@ -3,12 +3,13 @@ import { convertTime } from "../utils/helper";
 const SportsCard = props => {
   const {
     card,
-    card: { id, event_category, event_name, start_time, end_time },
     isSelected,
     allEvents,
     handleSelectCard,
     removeCard,
   } = props;
+
+  const {id, event_category, event_name, start_time, end_time} = card
 
   const handleSelectClick = () => {
     handleSelectCard && handleSelectCard(card);

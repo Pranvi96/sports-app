@@ -3,11 +3,7 @@ import ReactDOM from "react-dom";
 import Body from "./src/components/Body";
 
 const AppLayout = () => {
-  return (
-    <div className="app">
-      <Body />
-    </div>
-  );
+  return <Body />;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
